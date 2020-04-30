@@ -30,7 +30,7 @@ window.dom = {
   },
   //清空
   empty(node) {
-    const { childeNodes } = node;
+    // const { childeNodes } = node;
     const array = [];
     let x = node.firstChild;
     while (x) {
@@ -92,7 +92,7 @@ window.dom = {
       }
     }
   },
-  //class的操作
+  // class的操作
   class: {
     add(node, className) {
       node.classList.add(className);
@@ -121,7 +121,7 @@ window.dom = {
   },
   //找儿子
   children(node) {
-    return node.childNodes;
+    return node.children;//childNodes含文本节点，而children不含文本节点
   },
   //找兄弟姐妹
   siblings(node) {
@@ -152,7 +152,7 @@ window.dom = {
   //查询排行
   index(node) {
     const list = dom.children(node.parentNode);
-    let i
+    let i;
     for (i = 0; i < list.length; i++) {
       if (list[i] === node) {
         break;
